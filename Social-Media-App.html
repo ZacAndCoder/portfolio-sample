@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Sample Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel='stylesheet' href='Sample-Blog.css'>
+</head>
+<!--Put placeholder text in comment boxes-->
+<body>
+  <header>
+    <nav class='navbar navbar-expand fixed-top text-nowrap' style='background-color: #D6ABAB'>
+      <h1><i class="bi bi-code-square"></i class='navbar-brand'>Sample</h1>
+      <div class='navbar-nav'>
+        <a id='home-link' class='navlink active m-3' aria-current='page' href='#'><i class="bi bi-house-fill"></i><p class='inline-nav-text'>Home</p></a>
+        <a class='navlink m-3' href='#'><i class="bi bi-envelope-fill"></i><p class='inline-nav-text'>Notifications</p></a>
+        <a id='settings-link' class='navlink m-3' href='#settings'><i class="bi bi-gear-fill"></i><p class='inline-nav-text'>Settings</p></a>
+      </div>
+    </nav>
+    <div class='text-center mb-2'>
+      <img id='profile-picture' src='person-bounding-box.svg' width='150px'/> 
+      <h2>@Guest</h2>
+    </div>
+  </header>
+  <main>
+    <div id='login-page'>
+      <form class='text-center'>
+        <label for='enter-email'>Enter your email here:</label>
+        <input id='enter-email' class='form-control' type='email' placeholder='YourEmail@email.com'/>
+        <button class='btn btn-primary'>Log in</button>
+        <label for'guest-login'>OR</label>
+        <button id='guest-login' class='btn btn-secondary'>Continue as a guest</button>
+      </form>
+    </div>
+    <div id='content'>
+      <div class='btn-group nav nav-tabs sticky-top' role='group' aria-label='Group of buttons that display different pages'>
+        <button id='trending-button' class='btn btn-secondary nav-item' aria-current='page'>Trending</button>
+        <button id='like-button' class='btn btn-secondary nav-item'>Liked</button>
+        <button id='create-post-button' class='btn btn-secondary nav-item'>Create Post</button>
+      </div>
+      <section id='trending'>
+        <div class='card m-3'>
+          <h4 class='card-header'>Trending <span class='badge bg-primary'>News</span></h4>
+          <div class='card-body'>
+            <p class='card-text'>According to the U.S. News and World Report, the University of South Florida is rising in rank quicker than any other university in the nation.</p>
+            <a class='card-link' href='https://www.usf.edu/news/2021/us-news-world-report-ranks-usf-americas-fastest-rising-university.aspx' target='_blank'>Click here to read more</a>
+          </div>
+          <div class='card-footer'>
+            <div class='btn-group' role='group' aria-label='Options to like or comment on the post'>
+              <i class="bi bi-suit-heart" role='button' aria-label='Like this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Like this post'></i>
+              <i id='usf-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
+            </div>
+            September 13, 2021
+            <div id='usf-comment-box'>
+              <!--Remember to prevent default text from submitting-->
+              <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
+              <br>
+              <button type='submit' class='btn-sm btn-success'>Submit</button>
+            </div>
+          </div>
+        </div>
+        <div class='card m-3'>
+          <h4 class='card-header'>Marcus Aurelius <span class='badge bg-success'>Verified User</span></h4>
+          <div class='card-body'>
+            <blockquote class='blockquote mb-0'>
+              <p>You have power over your mind - not outside events. Realize this, and you will find strength.</p>
+            </blockquote>
+          </div>
+          <div class='card-footer'>
+            <div class='btn-group' role='group' aria-label='Options to like or comment on the post'>
+              <i class="bi bi-suit-heart" role='button' aria-label='Like this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Like this post'></i>
+              <i id='aurelius-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
+            </div>
+            2nd Century AD
+            <div id='aurelius-comment-box'>
+              <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
+              <br>
+              <button type='submit' class='btn-sm btn-success'>Submit</button>
+            </div>
+          </div>
+        </div>
+        <div class='card m-3'>
+          <h4 class='card-header'>Trending <span class='badge bg-warning'>Ad</span></h4>
+          <div class='card-body'>
+            <p class='card-text'>Want to play a hand or two of Blackjack without losing any actual money? Check out the link below!</p>
+            <a class='card-link' href='https://zacandcoder.github.io/blackjack/' target='_blank'>Play Blackjack</a>
+          </div>
+          <div class='card-footer'>
+            <div class='btn-group' role='group' aria-label='Options to like or comment on the post'>
+              <i class="bi bi-suit-heart" role='button' aria-label='Like this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Like this post'></i>
+              <i id='blackjack-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
+            </div>
+            October 28, 2021
+            <div id='blackjack-comment-box'>
+              <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
+              <br>
+              <button type='submit' class='btn-sm btn-success'>Submit</button>
+            </div>
+          </div>
+        </div>
+        <div class='card m-3'>
+          <h4 class='card-header'>Trending <span class='badge bg-primary'>News</span></h4>
+          <div class='card-body'>
+            <p class='card-text'>Fans of HBO's "Game of Thrones" have a new show to look forward to. "House of the Dragon" will premiere on HBO in 2022.</p>
+            <a class='card-link' href='https://www.youtube.com/watch?v=fNwwt25mheo' target='_blank'>Click here to watch the official trailer</a>
+          </div>
+          <div class='card-footer'>
+            <div class='btn-group' role='group' aria-label='Options to like or comment on the post'>
+              <i class="bi bi-suit-heart" role='button' aria-label='Like this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Like this post'></i>
+              <i id='hbo-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
+            </div>
+            October 5, 2021
+            <div id='hbo-comment-box'>
+              <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
+              <br>
+              <button type='submit' class='btn-sm btn-success'>Submit</button>
+            </div>
+          </div>
+        </div>
+        <div class='card m-3'>
+          <h4 class='card-header'>Trending <span class='badge bg-primary'>News</span></h4>
+          <div class='card-body'>
+            <p class='card-text'>Xbox Game Pass owners will have access to Halo Infinite on launch day. December 8th can't come soon enough.</p>
+            <a class='card-link' href='https://www.xbox.com/en-US/games/halo-infinite' target='_blank'>Click here to read more</a>
+          </div>
+          <div class='card-footer'>
+            <div class='btn-group' role='group' aria-label='Options to like or comment on the post'>
+              <i class="bi bi-suit-heart" role='button' aria-label='Like this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Like this post'></i>
+              <i id='halo-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
+            </div>
+            October 27, 2021
+            <div id='halo-comment-box'>
+              <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
+              <br>
+              <button type='submit' class='btn-sm btn-success'>Submit</button>
+            </div>
+          </div>
+        </div>
+        <div class='card m-3'>
+          <h4 class='card-header'>Trending <span class='badge bg-warning'>Ad</span></h4>
+          <div class='card-body'>
+            <p class='card-text'>From the same company that brought you Blackjack comes Checkers! Click on the link below to play for free.</p>
+            <a class='card-link' href='https://zacandcoder.github.io/checkers-board-game/' target='_blank'>Play Checkers</a>
+          </div>
+          <div class='card-footer'>
+            <div class='btn-group' role='group' aria-label='Options to like or comment on the post'>
+              <i class="bi bi-suit-heart" role='button' aria-label='Like this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Like this post'></i>
+              <i id='checkers-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
+            </div>
+            October 28, 2021
+            <div id='checkers-comment-box'>
+              <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
+              <br>
+              <button type='submit' class='btn-sm btn-success'>Submit</button>
+            </div>
+          </div>
+        </div>
+        <div class='card m-3'>
+          <h4 class='card-header'>Trending <span class='badge bg-primary'>News</span></h4>
+          <div class='card-body'>
+            <p class='card-text'>It's official: UFC fighter Dustin Poirier will face Charles Oliveira for the lightweight division title in December.</p>
+            <a class='card-link' href='https://www.espn.com/mma/story/_/id/32335812/dustin-poirier-agrees-ufc-lightweight-title-fight-vs-charles-oliveira-dec-11' target='_blank'>Click here to read more</a>
+          </div>
+          <div class='card-footer'>
+            <div class='btn-group' role='group' aria-label='Options to like or comment on the post'>
+              <i class="bi bi-suit-heart" role='button' aria-label='Like this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Like this post'></i>
+              <i id='ufc-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
+            </div>
+            October 4, 2021
+            <div id='ufc-comment-box'>
+              <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
+              <br>
+              <button type='submit' class='btn-sm btn-success'>Submit</button>
+            </div>
+          </div>
+        </div>
+        <div class='card m-3'>
+          <h4 class='card-header'>Seneca the Younger <span class='badge bg-success'>Verified User</span></h4>
+          <div class='card-body'>
+            <blockquote class='blockquote mb-0'>
+              <p>Hang on to your youthful enthusiasms - you’ll be able to use them better when you’re older.</p>
+            </blockquote>
+          </div>
+          <div class='card-footer'>
+            <div class='btn-group' role='group' aria-label='Options to like or comment on the post'>
+              <i class="bi bi-suit-heart" role='button' aria-label='Like this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Like this post'></i>
+              <i id='seneca-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
+            </div>
+            1st Century AD
+            <div id='seneca-comment-box'>
+              <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
+              <br>
+              <button type='submit' class='btn-sm btn-success'>Submit</button>
+            </div>
+          </div>
+        </div>
+        <div class='card m-3'>
+          <h4 class='card-header'>Trending <span class='badge rounded-pill bg-primary'>News</span></h4>
+          <div class='card-body'>
+            <p class='card-text'>The University of Florida is moving up in the world. It is now considered the fifth best public university in America by the U.S. News and World Report.</p>
+            <a class='card-link' href='https://news.ufl.edu/2021/09/usnwr-ranking-2022/' target='_blank'>Click here to read more</a>
+          </div>
+          <div class='card-footer'>
+            <div class='btn-group' role='group' aria-label='Options to like or comment on the post'>
+              <i class="bi bi-suit-heart" role='button' aria-label='Like this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Like this post'></i>
+              <i id='uf-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
+            </div>
+            September 13, 2021
+            <div id='uf-comment-box'>
+              <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
+              <br>
+              <button type='submit' class='btn-sm btn-success'>Submit</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id='liked-posts'>
+      
+      </section>
+      <section id='create-post'>
+        <div class='card m-3'>
+          <div class='card-header'>
+            <i class="bi bi-type-bold"></i>
+            <i class="bi bi-type-italic"></i>
+            <i class="bi bi-type-underline"></i>
+          </div>
+          <div class='card-body'>
+            <textarea maxlength="300" placeholder="What's on your mind?"></textarea>
+            <br>
+            <button type='submit' class='btn-sm btn-success'>Submit</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id='notifications'>
+    
+    </div>
+    <div id='settings'>
+      <form class='text-center m-auto'>
+        <div class='form-check form-switch'>
+          <label for='dark-mode-switch'>Dark Mode</label>
+          <input id='dark-mode-switch' class='form-check-input m-3' type='checkbox'/>
+        </div>
+        <label for='change-profile-picture'>Profile Picture</label>
+        <input id='change-profile-picture' type='file' class='form-control'/>
+        <label for='change-username' class='mt-3'>Username</label>
+        <div class='input-group ms-2'>
+          <button class='m-0 input-group-text' disabled><h5>@</h5></button>
+          <input id='change-username' type='text' class='form-control' placeholder='username'/>
+          <button type='submit' class='btn btn-primary'>Set Username</button>
+        <div>
+      </form>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src='Sample-Blog.js'></script>
+</body>
+
+</html>
