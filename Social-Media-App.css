@@ -1,4 +1,20 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css");
+@media only screen and (max-width: 380px) {
+  /* Fix sticky nav-items */
+  .nav-tabs {
+    position: static;
+  }
+  .nav-item {
+    margin: 0;
+  }
+  .card-footer {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .badge {
+    display: none;
+  }
+}
 @media only screen and (max-width: 576px) {
   .bi-house-fill, .bi-envelope-fill, .bi-gear-fill {
     display: inline;
@@ -23,41 +39,45 @@
   .inline-nav-text {
     display: inline;
   }
+  #login-page {
+    box-shadow: 500px 100px 100px 100rem #D6ABAB;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.dark {
+  color-scheme: dark;
+  background-color: #121212;
+  color: #F0F0F0;
+}
+.dark-navlink {
+  color: #F0F0F0;
+}
+.dark-comment {
+  background-color: #212529;
+  color: #F0F0F0;
 }
 body {
   background-color: #F0F0F0;
 }
-#login-page {
-  border: 2px solid blue;
-  background-color: #F9F9F9;
-  margin: 1rem;
-  display: none;
+nav {
+  background-color: #D6ABAB;
 }
 #profile-picture {
   margin-top: 5rem;
-}
-#liked-posts {
-  display: none;
-}
-#create-post {
-  display: none;
-}
-#profile-picture {
-  border: 2px solid blue;
   max-width: 20%;
   height: auto;
 }
-.d-inline {
-  margin: 1rem;
+#liked-posts, #create-post, #settings, #notifications {
+  display: none;
 }
-i {
+i, button {
   margin: 0 1rem;
 }
 .bi-chat-left:hover, .bi-suit-heart:hover {
   color: red;
-}
-button {
-  margin: 0 1rem;
 }
 .navlink {
   color: #121212;
@@ -75,17 +95,7 @@ textarea {
 }
 .nav-tabs {
   position: -webkit-sticky; /*try this out in internet explorer */
-  top: 5rem;
-}
-#settings {
-  display: none;
-}
-form {
-  border: 2px solid gray;
-  width: 80%;
-  display: flex;
-  flex-flow: column nowrap;
-  margin: 1rem;
+  top: 4.5rem;
 }
 .form-switch {
   display: flex;
