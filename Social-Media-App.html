@@ -4,19 +4,29 @@
 <head>
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='color-scheme' content='dark light'>
   <title>Sample Blog</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel='stylesheet' href='Sample-Blog.css'>
+  <link rel='stylesheet' href='Social-Media-App.css'>
 </head>
-<!--Put placeholder text in comment boxes-->
+
 <body>
   <header>
-    <nav class='navbar navbar-expand fixed-top text-nowrap' style='background-color: #D6ABAB'>
-      <h1><i class="bi bi-code-square"></i class='navbar-brand'>Sample</h1>
+    <nav class='navbar navbar-expand fixed-top text-nowrap'>
+      <h1><i class="bi bi-code-square"></i>Sample</h1>
       <div class='navbar-nav'>
-        <a id='home-link' class='navlink active m-3' aria-current='page' href='#'><i class="bi bi-house-fill"></i><p class='inline-nav-text'>Home</p></a>
-        <a class='navlink m-3' href='#'><i class="bi bi-envelope-fill"></i><p class='inline-nav-text'>Notifications</p></a>
-        <a id='settings-link' class='navlink m-3' href='#settings'><i class="bi bi-gear-fill"></i><p class='inline-nav-text'>Settings</p></a>
+        <a id='home-link' class='navlink active m-sm-3' aria-current='page' href='#'>
+          <i class="bi bi-house-fill"></i>
+          <p class='inline-nav-text'>Home</p>
+        </a>
+        <a id='notifications-link' class='navlink m-sm-3' href='#'>
+          <i class="bi bi-envelope-fill"></i>
+          <p class='inline-nav-text'>Notifications</p>
+        </a>
+        <a id='settings-link' class='navlink m-sm-3' href='#settings'>
+          <i class="bi bi-gear-fill"></i>
+          <p class='inline-nav-text'>Settings</p>
+        </a>
       </div>
     </nav>
     <div class='text-center mb-2'>
@@ -26,13 +36,19 @@
   </header>
   <main>
     <div id='login-page'>
-      <form class='text-center'>
-        <label for='enter-email'>Enter your email here:</label>
-        <input id='enter-email' class='form-control' type='email' placeholder='YourEmail@email.com'/>
-        <button class='btn btn-primary'>Log in</button>
-        <label for'guest-login'>OR</label>
-        <button id='guest-login' class='btn btn-secondary'>Continue as a guest</button>
-      </form>
+      <div class='card bg-light m-3'>
+        <div class='card-body'>
+          <h3 class='card-title'>Sample</h3>
+          <p class='card-text'>Welcome to the Sample. To log in, either enter your information below or choose "Continue as a guest."</p>
+          <input class='form-control' type='email' placeholder='Email'/>
+          <input class='form-control mt-2' type='password' placeholder='Password'/>
+          <p class='card-text'>
+            <small class='text-muted'>Any information entered will not be saved. This page is only a demonstration.</small>
+          </p>
+          <button id='login' class='btn btn-primary m-0'>Log in</button>
+          <button id='guest-login' class='btn btn-secondary m-0'>Continue as a guest</button>
+        </div>
+      </div>
     </div>
     <div id='content'>
       <div class='btn-group nav nav-tabs sticky-top' role='group' aria-label='Group of buttons that display different pages'>
@@ -42,7 +58,7 @@
       </div>
       <section id='trending'>
         <div class='card m-3'>
-          <h4 class='card-header'>Trending <span class='badge bg-primary'>News</span></h4>
+          <h5 class='card-header'>Trending <span class='badge bg-primary'>News</span></h5>
           <div class='card-body'>
             <p class='card-text'>According to the U.S. News and World Report, the University of South Florida is rising in rank quicker than any other university in the nation.</p>
             <a class='card-link' href='https://www.usf.edu/news/2021/us-news-world-report-ranks-usf-americas-fastest-rising-university.aspx' target='_blank'>Click here to read more</a>
@@ -54,7 +70,6 @@
             </div>
             September 13, 2021
             <div id='usf-comment-box'>
-              <!--Remember to prevent default text from submitting-->
               <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
               <br>
               <button type='submit' class='btn-sm btn-success'>Submit</button>
@@ -62,11 +77,9 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h4 class='card-header'>Marcus Aurelius <span class='badge bg-success'>Verified User</span></h4>
+          <h5 class='card-header'>Marcus Aurelius <span class='badge bg-success'>Verified User</span></h5>
           <div class='card-body'>
-            <blockquote class='blockquote mb-0'>
-              <p>You have power over your mind - not outside events. Realize this, and you will find strength.</p>
-            </blockquote>
+            <p class='card-text'>You have power over your mind - not outside events. Realize this, and you will find strength.</p>
           </div>
           <div class='card-footer'>
             <div class='btn-group' role='group' aria-label='Options to like or comment on the post'>
@@ -82,7 +95,7 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h4 class='card-header'>Trending <span class='badge bg-warning'>Ad</span></h4>
+          <h5 class='card-header'>Trending <span class='badge bg-warning'>Ad</span></h5>
           <div class='card-body'>
             <p class='card-text'>Want to play a hand or two of Blackjack without losing any actual money? Check out the link below!</p>
             <a class='card-link' href='https://zacandcoder.github.io/blackjack/' target='_blank'>Play Blackjack</a>
@@ -101,7 +114,7 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h4 class='card-header'>Trending <span class='badge bg-primary'>News</span></h4>
+          <h5 class='card-header'>Trending <span class='badge bg-primary'>News</span></h5>
           <div class='card-body'>
             <p class='card-text'>Fans of HBO's "Game of Thrones" have a new show to look forward to. "House of the Dragon" will premiere on HBO in 2022.</p>
             <a class='card-link' href='https://www.youtube.com/watch?v=fNwwt25mheo' target='_blank'>Click here to watch the official trailer</a>
@@ -120,7 +133,7 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h4 class='card-header'>Trending <span class='badge bg-primary'>News</span></h4>
+          <h5 class='card-header'>Trending <span class='badge bg-primary'>News</span></h5>
           <div class='card-body'>
             <p class='card-text'>Xbox Game Pass owners will have access to Halo Infinite on launch day. December 8th can't come soon enough.</p>
             <a class='card-link' href='https://www.xbox.com/en-US/games/halo-infinite' target='_blank'>Click here to read more</a>
@@ -139,7 +152,7 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h4 class='card-header'>Trending <span class='badge bg-warning'>Ad</span></h4>
+          <h5 class='card-header'>Trending <span class='badge bg-warning'>Ad</span></h5>
           <div class='card-body'>
             <p class='card-text'>From the same company that brought you Blackjack comes Checkers! Click on the link below to play for free.</p>
             <a class='card-link' href='https://zacandcoder.github.io/checkers-board-game/' target='_blank'>Play Checkers</a>
@@ -158,7 +171,7 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h4 class='card-header'>Trending <span class='badge bg-primary'>News</span></h4>
+          <h5 class='card-header'>Trending <span class='badge bg-primary'>News</span></h5>
           <div class='card-body'>
             <p class='card-text'>It's official: UFC fighter Dustin Poirier will face Charles Oliveira for the lightweight division title in December.</p>
             <a class='card-link' href='https://www.espn.com/mma/story/_/id/32335812/dustin-poirier-agrees-ufc-lightweight-title-fight-vs-charles-oliveira-dec-11' target='_blank'>Click here to read more</a>
@@ -177,11 +190,9 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h4 class='card-header'>Seneca the Younger <span class='badge bg-success'>Verified User</span></h4>
+          <h5 class='card-header'>Seneca the Younger <span class='badge bg-success'>Verified User</span></h5>
           <div class='card-body'>
-            <blockquote class='blockquote mb-0'>
-              <p>Hang on to your youthful enthusiasms - you’ll be able to use them better when you’re older.</p>
-            </blockquote>
+            <p class='card-text'>Hang on to your youthful enthusiasms - you’ll be able to use them better when you’re older.</p>
           </div>
           <div class='card-footer'>
             <div class='btn-group' role='group' aria-label='Options to like or comment on the post'>
@@ -197,7 +208,7 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h4 class='card-header'>Trending <span class='badge rounded-pill bg-primary'>News</span></h4>
+          <h5 class='card-header'>Trending <span class='badge rounded-pill bg-primary'>News</span></h5>
           <div class='card-body'>
             <p class='card-text'>The University of Florida is moving up in the world. It is now considered the fifth best public university in America by the U.S. News and World Report.</p>
             <a class='card-link' href='https://news.ufl.edu/2021/09/usnwr-ranking-2022/' target='_blank'>Click here to read more</a>
@@ -217,7 +228,7 @@
         </div>
       </section>
       <section id='liked-posts'>
-      
+		<h5 id='no-likes' class='text-center mt-5'>You have not liked any posts.</h5>
       </section>
       <section id='create-post'>
         <div class='card m-3'>
@@ -235,27 +246,40 @@
       </section>
     </div>
     <div id='notifications'>
-    
+      <div class='accordion' id='messages'>
+        <div class='accordion-item'>
+          <h4 class='accordion-header' id='message-notification'>
+            <button class='accordion-button collapsed m-0' type='button' data-bs-toggle='collapse' data-bs-target='#unread-message' aria-expanded='true' aria-controls='unread-message'>
+              You have one unread notification.
+            </button>
+          </h4>
+          <div id='unread-message' class='accordion-collapse collapse' aria-labelledby='message-notification' data-bs-parent='#messages'>
+            <div class='accordion-body'>
+              Text
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id='settings'>
-      <form class='text-center m-auto'>
+      <form class='text-center'>
         <div class='form-check form-switch'>
           <label for='dark-mode-switch'>Dark Mode</label>
           <input id='dark-mode-switch' class='form-check-input m-3' type='checkbox'/>
         </div>
-        <label for='change-profile-picture'>Profile Picture</label>
+        <label for='change-profile-picture'>Set Profile Picture</label>
         <input id='change-profile-picture' type='file' class='form-control'/>
-        <label for='change-username' class='mt-3'>Username</label>
+        <label for='change-username' class='mt-3'>Set Username</label>
         <div class='input-group ms-2'>
           <button class='m-0 input-group-text' disabled><h5>@</h5></button>
-          <input id='change-username' type='text' class='form-control' placeholder='username'/>
-          <button type='submit' class='btn btn-primary'>Set Username</button>
+          <input id='change-username' type='text' class='form-control' placeholder='Username'/>
+          <button type='submit' class='btn btn-primary'>Update</button>
         <div>
       </form>
     </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src='Sample-Blog.js'></script>
+  <script src='Social-Media-App.js'></script>
 </body>
 
 </html>
