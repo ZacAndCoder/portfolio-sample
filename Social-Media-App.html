@@ -17,21 +17,21 @@
       <div class='navbar-nav'>
         <a id='home-link' class='navlink active m-sm-3' aria-current='page' href='#'>
           <i class="bi bi-house-fill"></i>
-          <p class='inline-nav-text'>Home</p>
+          <p class='inline-nav-text d-none d-sm-inline'>Home</p>
         </a>
         <a id='notifications-link' class='navlink m-sm-3' href='#'>
           <i class="bi bi-envelope-fill"></i>
-          <p class='inline-nav-text'>Notifications</p>
+          <p class='inline-nav-text d-none d-sm-inline'>Notifications</p>
         </a>
         <a id='settings-link' class='navlink m-sm-3' href='#settings'>
           <i class="bi bi-gear-fill"></i>
-          <p class='inline-nav-text'>Settings</p>
+          <p class='inline-nav-text d-none d-sm-inline'>Settings</p>
         </a>
       </div>
     </nav>
     <div class='text-center mb-2'>
       <img id='profile-picture' src='person-bounding-box.svg' width='150px'/> 
-      <h2>@Guest</h2>
+      <h2 id='profile-username'>@Guest</h2>
     </div>
   </header>
   <main>
@@ -40,8 +40,8 @@
         <div class='card-body'>
           <h3 class='card-title'>Sample</h3>
           <p class='card-text'>Welcome to the Sample. To log in, either enter your information below or choose "Continue as a guest."</p>
-          <input class='form-control' type='email' placeholder='Email'/>
-          <input class='form-control mt-2' type='password' placeholder='Password'/>
+          <input id='email-input' class='form-control' type='email' placeholder='Email'/>
+          <input id='password-input' class='form-control mt-2' type='password' placeholder='Password'/>
           <p class='card-text'>
             <small class='text-muted'>Any information entered will not be saved. This page is only a demonstration.</small>
           </p>
@@ -58,7 +58,7 @@
       </div>
       <section id='trending'>
         <div class='card m-3'>
-          <h5 class='card-header'>Trending <span class='badge bg-primary'>News</span></h5>
+          <h5 class='card-header'>The Tellone Tribune <span class='badge bg-primary'>News</span></h5>
           <div class='card-body'>
             <p class='card-text'>According to the U.S. News and World Report, the University of South Florida is rising in rank quicker than any other university in the nation.</p>
             <a class='card-link' href='https://www.usf.edu/news/2021/us-news-world-report-ranks-usf-americas-fastest-rising-university.aspx' target='_blank'>Click here to read more</a>
@@ -95,7 +95,7 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h5 class='card-header'>Trending <span class='badge bg-warning'>Ad</span></h5>
+          <h5 class='card-header'>Portfolio Projects <span class='badge bg-warning'>Ad</span></h5>
           <div class='card-body'>
             <p class='card-text'>Want to play a hand or two of Blackjack without losing any actual money? Check out the link below!</p>
             <a class='card-link' href='https://zacandcoder.github.io/blackjack/' target='_blank'>Play Blackjack</a>
@@ -114,7 +114,7 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h5 class='card-header'>Trending <span class='badge bg-primary'>News</span></h5>
+          <h5 class='card-header'>The Tellone Tribune <span class='badge bg-primary'>News</span></h5>
           <div class='card-body'>
             <p class='card-text'>Fans of HBO's "Game of Thrones" have a new show to look forward to. "House of the Dragon" will premiere on HBO in 2022.</p>
             <a class='card-link' href='https://www.youtube.com/watch?v=fNwwt25mheo' target='_blank'>Click here to watch the official trailer</a>
@@ -133,7 +133,7 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h5 class='card-header'>Trending <span class='badge bg-primary'>News</span></h5>
+          <h5 class='card-header'>The Tellone Tribune <span class='badge bg-primary'>News</span></h5>
           <div class='card-body'>
             <p class='card-text'>Xbox Game Pass owners will have access to Halo Infinite on launch day. December 8th can't come soon enough.</p>
             <a class='card-link' href='https://www.xbox.com/en-US/games/halo-infinite' target='_blank'>Click here to read more</a>
@@ -152,7 +152,7 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h5 class='card-header'>Trending <span class='badge bg-warning'>Ad</span></h5>
+          <h5 class='card-header'>Portfolio Projects <span class='badge bg-warning'>Ad</span></h5>
           <div class='card-body'>
             <p class='card-text'>From the same company that brought you Blackjack comes Checkers! Click on the link below to play for free.</p>
             <a class='card-link' href='https://zacandcoder.github.io/checkers-board-game/' target='_blank'>Play Checkers</a>
@@ -171,7 +171,7 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h5 class='card-header'>Trending <span class='badge bg-primary'>News</span></h5>
+          <h5 class='card-header'>The Tellone Tribune <span class='badge bg-primary'>News</span></h5>
           <div class='card-body'>
             <p class='card-text'>It's official: UFC fighter Dustin Poirier will face Charles Oliveira for the lightweight division title in December.</p>
             <a class='card-link' href='https://www.espn.com/mma/story/_/id/32335812/dustin-poirier-agrees-ufc-lightweight-title-fight-vs-charles-oliveira-dec-11' target='_blank'>Click here to read more</a>
@@ -208,7 +208,7 @@
           </div>
         </div>
         <div class='card m-3'>
-          <h5 class='card-header'>Trending <span class='badge rounded-pill bg-primary'>News</span></h5>
+          <h5 class='card-header'>The Tellone Tribune <span class='badge bg-primary'>News</span></h5>
           <div class='card-body'>
             <p class='card-text'>The University of Florida is moving up in the world. It is now considered the fifth best public university in America by the U.S. News and World Report.</p>
             <a class='card-link' href='https://news.ufl.edu/2021/09/usnwr-ranking-2022/' target='_blank'>Click here to read more</a>
@@ -226,19 +226,41 @@
             </div>
           </div>
         </div>
+        <div class='card m-3'>
+          <h5 class='card-header'>Portfolio Projects <span class='badge bg-warning'>Ad</span></h5>
+          <div class='card-body'>
+            <p class='card-text'>If you're browsing the web and need to do some calculations, check out the calculator below.</p>
+            <a class='card-link' href='https://zacandcoder.github.io/react-calculator/' target='_blank'>Do some math</a>
+          </div>
+          <div class='card-footer'>
+            <div class='btn-group' role='group' aria-label='Options to like or comment on the post'>
+              <i class="bi bi-suit-heart" role='button' aria-label='Like this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Like this post'></i>
+              <i id='calculator-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
+            </div>
+            November 8, 2021
+            <div id='calculator-comment-box'>
+              <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
+              <br>
+              <button type='submit' class='btn-sm btn-success'>Submit</button>
+            </div>
+          </div>
+        </div>
       </section>
       <section id='liked-posts'>
-		<h5 id='no-likes' class='text-center mt-5'>You have not liked any posts.</h5>
+        <h5 id='no-likes' class='text-center mt-5'>You have not liked any posts.</h5>
       </section>
       <section id='create-post'>
         <div class='card m-3'>
-          <div class='card-header'>
-            <i class="bi bi-type-bold"></i>
-            <i class="bi bi-type-italic"></i>
-            <i class="bi bi-type-underline"></i>
+          <!--Display the header below after adding the ability to style post text-->
+          <div class='card-header d-none'>
+            <div class='btn-group' role='group'>
+              <i id='bold-text' class="bi bi-type-bold" role='button'></i>
+              <i class="bi bi-type-italic" role='button'></i>
+              <i class="bi bi-type-underline" role='button'></i>
+            </div>
           </div>
           <div class='card-body'>
-            <textarea maxlength="300" placeholder="What's on your mind?"></textarea>
+            <textarea id='create-post-text' maxlength="300" placeholder="What's on your mind?"></textarea>
             <br>
             <button type='submit' class='btn-sm btn-success'>Submit</button>
           </div>
@@ -250,12 +272,48 @@
         <div class='accordion-item'>
           <h4 class='accordion-header' id='message-notification'>
             <button class='accordion-button collapsed m-0' type='button' data-bs-toggle='collapse' data-bs-target='#unread-message' aria-expanded='true' aria-controls='unread-message'>
-              You have one unread notification.
+              You have one unread message
             </button>
           </h4>
           <div id='unread-message' class='accordion-collapse collapse' aria-labelledby='message-notification' data-bs-parent='#messages'>
             <div class='accordion-body'>
-              Text
+              Hello! Thanks for checking out my fake social media app. This site serves as a portfolio of sorts. The "Trending" section contains posts that relate to my own interests. Any post with an "Ad" badge links to a project of mine. To learn more about my projects, you can check out my <a href='https://github.com/ZacAndCoder' target='_blank'>Github profile</a>.
+            </div>
+          </div>
+        </div>
+        <div class='accordion-item'>
+          <h4 class='accordion-header' id='message-notification2'>
+            <button class='accordion-button collapsed m-0' type='button' data-bs-toggle='collapse' data-bs-target='#unread-message2' aria-expanded='true' aria-controls='unread-message2'>
+              John Doe<span class='badge bg-danger ms-1'>Spam</span>
+            </button>
+          </h4>
+          <div id='unread-message2' class='accordion-collapse collapse' aria-labelledby='message-notification2' data-bs-parent='#messages'>
+            <div class='accordion-body'>
+               Lorem ipsum dolor sit amet.
+            </div>
+          </div>
+        </div>
+        <div class='accordion-item'>
+          <h4 class='accordion-header' id='message-notification3'>
+            <button class='accordion-button collapsed m-0' type='button' data-bs-toggle='collapse' data-bs-target='#unread-message3' aria-expanded='true' aria-controls='unread-message3'>
+              Jane Doe<span class='badge bg-danger ms-1'>Spam</span>
+            </button>
+          </h4>
+          <div id='unread-message3' class='accordion-collapse collapse' aria-labelledby='message-notification3' data-bs-parent='#messages'>
+            <div class='accordion-body'>
+               Lorem ipsum dolor sit amet.
+            </div>
+          </div>
+        </div>
+        <div class='accordion-item'>
+          <h4 class='accordion-header' id='message-notification4'>
+            <button class='accordion-button collapsed m-0' type='button' data-bs-toggle='collapse' data-bs-target='#unread-message4' aria-expanded='true' aria-controls='unread-message4'>
+              John Doe<span class='badge bg-danger ms-1'>Spam</span>
+            </button>
+          </h4>
+          <div id='unread-message4' class='accordion-collapse collapse' aria-labelledby='message-notification4' data-bs-parent='#messages'>
+            <div class='accordion-body'>
+               Lorem ipsum dolor sit amet.
             </div>
           </div>
         </div>
@@ -267,13 +325,17 @@
           <label for='dark-mode-switch'>Dark Mode</label>
           <input id='dark-mode-switch' class='form-check-input m-3' type='checkbox'/>
         </div>
-        <label for='change-profile-picture'>Set Profile Picture</label>
-        <input id='change-profile-picture' type='file' class='form-control'/>
+        <!--Display the input group below after adding the ability to set profile picture-->
+        <label for='change-profile-picture' class='d-none'>Set Profile Picture</label>
+        <div class='input-group ms-2 d-none'>
+          <input id='change-profile-picture' type='file' class='form-control' accept='image/*'/>
+          <button id='submit-new-picture' type='submit' class='btn btn-primary'>Update</button>
+        </div>
         <label for='change-username' class='mt-3'>Set Username</label>
         <div class='input-group ms-2'>
           <button class='m-0 input-group-text' disabled><h5>@</h5></button>
-          <input id='change-username' type='text' class='form-control' placeholder='Username'/>
-          <button type='submit' class='btn btn-primary'>Update</button>
+          <input id='change-username' type='text' class='form-control' placeholder='Username' maxlength='15'/>
+          <button id='submit-new-username' type='submit' class='btn btn-primary'>Update</button>
         <div>
       </form>
     </div>
