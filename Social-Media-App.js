@@ -1,8 +1,36 @@
+//Load the page with only the login element displayed, and clear all input values upon page reload
 document.querySelectorAll("header, #content").forEach(item => {
   item.style.display = "none";
 });
+document.querySelectorAll("textarea, input").forEach(item => {
+  item.value = "";
+  if (item.type == "checkbox") {
+    item.checked = false;
+  }
+});
 
+//Allow login if email and password are "valid"
+document.querySelector("#login").addEventListener("click", function() {
+  //This regex is deliberately simplified. A real verification should probably include sending an actual email.
+  if (document.querySelector("#email-input").value.match(/.+@.+\..+/)) {
+    if (document.querySelector("#password-input").value.length > 0) {
+      username = "@Guest";
+      document.querySelector("#login-page").style.display = "none";
+      document.querySelectorAll("header, #content").forEach(item => {
+        item.style.display = "block";
+      });
+    } else {
+      document.querySelector("#password-input").value = "";
+      document.querySelector("#password-input").placeholder = "Invalid password";
+    }
+  } else {
+    document.querySelector("#email-input").value = "";
+    document.querySelector("#email-input").placeholder = "Invalid email";
+  }
+});
+//Log in when "Continue as a guest" button is clicked
 document.querySelector("#guest-login").addEventListener("click", function() {
+  username = "@Guest";
   document.querySelector("#login-page").style.display = "none";
   document.querySelectorAll("header, #content").forEach(item => {
     item.style.display = "block";
@@ -15,32 +43,57 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl);
 })
 
-document.querySelector("#settings-link").addEventListener("click", function() {
-  document.querySelectorAll("#content, #notifications").forEach(item => {
-	item.style.display = "none";
+//Switch between pages
+document.querySelectorAll("#settings-link, #home-link, #notifications-link, #trending-button, #like-button, #create-post-button").forEach(item => {
+  item.addEventListener("click", function() {
+    switch(item) {
+      case document.querySelector("#settings-link"):
+        document.querySelector("#content").style.display = "none";
+        document.querySelector("#notifications").style.display = "none";
+        document.querySelector("#settings").style.display = "block";
+        break;
+      case document.querySelector("#home-link"):
+        document.querySelector("#settings").style.display = "none";
+        document.querySelector("#notifications").style.display = "none";
+        document.querySelector("#content").style.display = "block";
+        break;
+      case document.querySelector("#notifications-link"):
+        document.querySelector("#settings").style.display = "none";
+        document.querySelector("#content").style.display = "none";
+        document.querySelector("#notifications").style.display = "block";
+        break;
+      case document.querySelector("#trending-button"):
+        document.querySelector("#liked-posts").style.display = "none";
+        document.querySelector("#create-post").style.display = "none";
+        document.querySelector("#trending").style.display = "block";
+        break;
+      case document.querySelector("#like-button"):
+        document.querySelector("#trending").style.display = "none";
+        document.querySelector("#create-post").style.display = "none";
+        document.querySelector("#liked-posts").style.display = "block";
+        break;
+      case document.querySelector("#create-post-button"):
+        document.querySelector("#trending").style.display = "none";
+        document.querySelector("#liked-posts").style.display = "none";
+        document.querySelector("#create-post").style.display = "block";
+        break;
+    }
   });
-  document.querySelector("#settings").style.display = "block";
-});
-document.querySelector("#home-link").addEventListener("click", function() {
-  document.querySelectorAll("#settings, #notifications").forEach(item => {
-	item.style.display = "none";
-  });
-  document.querySelector("#content").style.display = "block";
-});
-document.querySelector("#notifications-link").addEventListener("click", function() {
-  document.querySelectorAll("#settings, #content").forEach(item => {
-	item.style.display = "none";
-  });
-  document.querySelector("#notifications").style.display = "block";
 });
 
+//Display name after unread message is opened
+document.querySelector(".accordion-button").addEventListener("click", function() {
+  document.querySelector(".accordion-button").innerText = "Zachary Tellone";
+});
+
+//Change colors when Dark Mode is toggled
 document.querySelector("#dark-mode-switch").addEventListener("click", function() {
-  document.querySelectorAll("html, body, nav").forEach(item => {
+  document.querySelectorAll("html, body, nav, .input-group-text").forEach(item => {
     item.classList.toggle("dark");
   });
-  document.querySelectorAll(".nav-item").forEach(item => {
+  /*document.querySelectorAll(".nav-item").forEach(item => {
     item.classList.toggle("btn-dark");
-  });
+  }); */
   document.querySelectorAll(".card").forEach(item => {
     item.classList.toggle("bg-dark");
   }); 
@@ -53,6 +106,9 @@ document.querySelector("#dark-mode-switch").addEventListener("click", function()
   document.querySelectorAll(".accordion-button, .accordion-body, .form-control").forEach(item => {
     item.classList.toggle("bg-dark");
     item.classList.toggle("text-white");
+  });
+  allCommentUsernames.forEach(item => {
+    item.classList.toggle("dark-navlink");
   });
 });
 
@@ -79,61 +135,98 @@ document.querySelectorAll(".bi-suit-heart").forEach(item => {
   });
 });
 
-//Switch nav tabs when clicked
-document.querySelector("#trending-button").addEventListener("click", function() {
-  document.querySelector("#liked-posts").style.display = "none";
-  document.querySelector("#create-post").style.display = "none";
-  document.querySelector("#trending").style.display = "block";
+//Add ability to style post texts in the "Create Post" section
+/*var isBolded = false;
+var postText = document.querySelector("#create-post-text");
+document.querySelector("#bold-text").addEventListener("click", function() {
+  isBolded == false ? isBolded = true : isBolded = false;
 });
-document.querySelector("#like-button").addEventListener("click", function() {
-  document.querySelector("#trending").style.display = "none";
-  document.querySelector("#create-post").style.display = "none";
-  document.querySelector("#liked-posts").style.display = "block";
-});
-document.querySelector("#create-post-button").addEventListener("click", function() {
-  document.querySelector("#trending").style.display = "none";
-  document.querySelector("#liked-posts").style.display = "none";
-  document.querySelector("#create-post").style.display = "block";
-});
+postText.addEventListener("input", function() {
+  if (isBolded == true) {
+    postText.style.fontWeight = "bold";
+  } else {
+    postText.style.fontWeight = "normal";
+  }
+}); */
 
-//Color "comment" icons red when clicked. Create new textarea element when comment icon is clicked.
+//Color "comment" icons red when clicked. Display new textarea element when comment icon is clicked.
 document.querySelectorAll(".bi-chat-left").forEach(item => {
   item.addEventListener("click", function() {
     item.style.color = "red";
-    if (item == document.querySelector("#usf-comment")) {
-      document.querySelector("#usf-comment-box").style.display = "block";
-    } else if (item == document.querySelector("#aurelius-comment")) {
-      document.querySelector("#aurelius-comment-box").style.display = "block";
-    } else if (item == document.querySelector("#blackjack-comment")) {
-      document.querySelector("#blackjack-comment-box").style.display = "block";
-    } else if (item == document.querySelector("#hbo-comment")) {
-      document.querySelector("#hbo-comment-box").style.display = "block";
-    } else if (item == document.querySelector("#halo-comment")) {
-      document.querySelector("#halo-comment-box").style.display = "block";
-    } else if (item == document.querySelector("#checkers-comment")) {
-      document.querySelector("#checkers-comment-box").style.display = "block";
-    } else if (item == document.querySelector("#ufc-comment")) {
-      document.querySelector("#ufc-comment-box").style.display = "block";
-    } else if (item == document.querySelector("#seneca-comment")) {
-      document.querySelector("#seneca-comment-box").style.display = "block";
-    } else if (item == document.querySelector("#uf-comment")) {
-      document.querySelector("#uf-comment-box").style.display = "block";
+    switch(item) {
+      case document.querySelector("#usf-comment"):
+        document.querySelector("#usf-comment-box").style.display = "block";
+        break;
+      case document.querySelector("#aurelius-comment"):
+        document.querySelector("#aurelius-comment-box").style.display = "block";
+        break;
+      case document.querySelector("#blackjack-comment"):
+        document.querySelector("#blackjack-comment-box").style.display = "block";
+        break;
+      case document.querySelector("#hbo-comment"):
+        document.querySelector("#hbo-comment-box").style.display = "block";
+        break;
+      case document.querySelector("#halo-comment"):
+        document.querySelector("#halo-comment-box").style.display = "block";
+        break;
+      case document.querySelector("#checkers-comment"):
+        document.querySelector("#checkers-comment-box").style.display = "block";
+        break;
+      case document.querySelector("#ufc-comment"):
+        document.querySelector("#ufc-comment-box").style.display = "block";
+        break;
+      case document.querySelector("#seneca-comment"):
+        document.querySelector("#seneca-comment-box").style.display = "block";
+        break;
+      case document.querySelector("#uf-comment"):
+        document.querySelector("#uf-comment-box").style.display = "block";
+        break;
+      case document.querySelector("#calculator-comment"):
+        document.querySelector("#calculator-comment-box").style.display = "block";
+        break;
     }
   });
 });
 
+var username = "";
+
+//Update username
+document.querySelector("#submit-new-username").addEventListener("click", function() {
+  if (document.querySelector("#change-username").value.match(/\W/i)) {
+    document.querySelector("#change-username").value = "";
+    document.querySelector("#change-username").placeholder = "Usernames may only contain alphanumeric characters.";
+  } else if (document.querySelector("#change-username").value.match(/\w+/i)) {
+    username = "@" + document.querySelector("#change-username").value;
+    document.querySelector("#profile-username").innerText = username;
+    for (let i = 0; i < allCommentUsernames.length; i++) {
+      allCommentUsernames[i].innerText = username;
+    }
+  } else {
+    document.querySelector("#change-username").value = "";
+    document.querySelector("#change-username").placeholder = "Usernames cannot be blank.";
+  }
+});
+
+//Save array of comments' displayed usernames so that they can be looped through and changed when username is updated
+var allCommentUsernames = [];
+
 document.querySelectorAll(".btn-sm").forEach(item => {
   item.addEventListener("click", function() {
     //Maybe prevent submission if nothing has been typed in comment box
-    item.parentNode.childNodes[1].disabled = true;
-    var profileIcon = document.createElement("i");
-    profileIcon.className = "bi";
-    profileIcon.classList.add("bi-person-bounding-box");
-    item.parentNode.appendChild(profileIcon);
-    var username = document.createElement("p");
-    username.innerHTML = "@Guest";
-    username.className = "d-inline";
-    item.parentNode.appendChild(username);
-    item.style.display = "none";
+    if (item.parentNode.childNodes[1].value.length > 0) {
+      item.parentNode.childNodes[1].disabled = true;
+      let profileIcon = document.createElement("i");
+      profileIcon.className = "bi";
+      profileIcon.classList.add("bi-person-bounding-box");
+      item.parentNode.appendChild(profileIcon);
+      let commentUsername = document.createElement("p");
+      commentUsername.innerText = username;
+      commentUsername.className = "d-inline";
+      allCommentUsernames.push(commentUsername);
+      item.parentNode.appendChild(commentUsername);
+      item.style.display = "none";
+    } else {
+      item.parentNode.childNodes[1].placeholder = "You must write a comment to submit.";
+    }
   });
 });
