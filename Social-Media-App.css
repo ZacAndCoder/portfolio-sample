@@ -1,9 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css");
 @media only screen and (max-width: 380px) {
-  /* Fix sticky nav-items */
-  .nav-tabs {
-    position: static;
-  }
   .nav-item {
     margin: 0;
   }
@@ -15,28 +11,21 @@
     display: none;
   }
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 575px) {
   .bi-house-fill, .bi-envelope-fill, .bi-gear-fill {
     display: inline;
   }
-  .inline-nav-text {
-    display: none;
+  .nav-tabs {
+    position: static;
   }
-  /*Get rid of tooltips on phones */
 }
-@media only screen and (min-width: 576px) and (max-width: 768px) {
+@media only screen and (min-width: 576px) and (max-width: 767px) {
   .bi-house-fill, .bi-envelope-fill, .bi-gear-fill {
     display: none;
-  }
-  .inline-nav-text {
-    display: inline;
   }
 }
 @media only screen and (min-width: 768px) {
   .bi-house-fill, .bi-envelope-fill, .bi-gear-fill {
-    display: inline;
-  }
-  .inline-nav-text {
     display: inline;
   }
   #login-page {
@@ -70,6 +59,9 @@ nav {
   max-width: 20%;
   height: auto;
 }
+#change-profile-picture {
+  max-width: 99%;
+}
 #liked-posts, #create-post, #settings, #notifications {
   display: none;
 }
@@ -90,11 +82,11 @@ textarea {
   resize: none;
   background-color: #F6F6F6;
 }
-#usf-comment-box, #aurelius-comment-box, #blackjack-comment-box, #hbo-comment-box, #halo-comment-box, #checkers-comment-box, #ufc-comment-box, #seneca-comment-box, #uf-comment-box {
+#usf-comment-box, #aurelius-comment-box, #blackjack-comment-box, #hbo-comment-box, #halo-comment-box, #checkers-comment-box, #ufc-comment-box, #seneca-comment-box, #uf-comment-box, #calculator-comment-box {
   display: none;
 }
 .nav-tabs {
-  position: -webkit-sticky; /*try this out in internet explorer */
+  position: -webkit-sticky; 
   top: 4.5rem;
 }
 .form-switch {
