@@ -194,7 +194,7 @@ var username = "";
 document.querySelector("#submit-new-username").addEventListener("click", function() {
   if (document.querySelector("#change-username").value.match(/\W/i)) {
     document.querySelector("#change-username").value = "";
-    document.querySelector("#change-username").placeholder = "Usernames may only contain alphanumeric characters.";
+    document.querySelector("#change-username").placeholder = "Invalid username";
   } else if (document.querySelector("#change-username").value.match(/\w+/i)) {
     username = "@" + document.querySelector("#change-username").value;
     document.querySelector("#profile-username").innerText = username;
@@ -203,7 +203,7 @@ document.querySelector("#submit-new-username").addEventListener("click", functio
     }
   } else {
     document.querySelector("#change-username").value = "";
-    document.querySelector("#change-username").placeholder = "Usernames cannot be blank.";
+    document.querySelector("#change-username").placeholder = "Invalid username";
   }
 });
 
