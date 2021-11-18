@@ -83,7 +83,7 @@ document.querySelectorAll("#settings-link, #home-link, #notifications-link, #tre
 
 //Display name after unread message is opened
 document.querySelector(".accordion-button").addEventListener("click", function() {
-  document.querySelector(".accordion-button").innerText = "Zachary Tellone";
+  document.querySelector(".accordion-button").innerText = "Zac";
 });
 
 //Change colors when Dark Mode is toggled
