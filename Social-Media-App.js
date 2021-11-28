@@ -103,7 +103,7 @@ document.querySelector("#dark-mode-switch").addEventListener("click", function()
   document.querySelectorAll("textarea").forEach(item => {
     item.classList.toggle("dark-comment");
   });
-  document.querySelectorAll(".accordion-button, .accordion-body, .form-control").forEach(item => {
+  document.querySelectorAll(".accordion-button, .accordion-body, .form-control, #create-post-text").forEach(item => {
     item.classList.toggle("bg-dark");
     item.classList.toggle("text-white");
   });
@@ -135,11 +135,11 @@ document.querySelectorAll(".bi-suit-heart").forEach(item => {
   });
 });
 
-//Add ability to style post texts in the "Create Post" section
-/*var isBolded = false;
+/* Add ability to style post texts in the "Create Post" section
+var isBolded = false;
 var postText = document.querySelector("#create-post-text");
 document.querySelector("#bold-text").addEventListener("click", function() {
-  isBolded == false ? isBolded = true : isBolded = false;
+  return isBolded == false ? isBolded = true : isBolded = false;
 });
 postText.addEventListener("input", function() {
   if (isBolded == true) {
@@ -212,7 +212,6 @@ var allCommentUsernames = [];
 
 document.querySelectorAll(".btn-sm").forEach(item => {
   item.addEventListener("click", function() {
-    //Maybe prevent submission if nothing has been typed in comment box
     if (item.parentNode.childNodes[1].value.length > 0) {
       item.parentNode.childNodes[1].disabled = true;
       let profileIcon = document.createElement("i");
@@ -230,3 +229,5 @@ document.querySelectorAll(".btn-sm").forEach(item => {
     }
   });
 });
+
+
