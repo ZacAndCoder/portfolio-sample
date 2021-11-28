@@ -82,6 +82,9 @@ textarea {
   resize: none;
   background-color: #F6F6F6;
 }
+#create-post-text {
+  background-color: white;
+}
 #usf-comment-box, #aurelius-comment-box, #blackjack-comment-box, #hbo-comment-box, #halo-comment-box, #checkers-comment-box, #ufc-comment-box, #seneca-comment-box, #uf-comment-box, #calculator-comment-box {
   display: none;
 }
