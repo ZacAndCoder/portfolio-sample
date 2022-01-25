@@ -153,38 +153,7 @@ postText.addEventListener("input", function() {
 document.querySelectorAll(".bi-chat-left").forEach(item => {
   item.addEventListener("click", function() {
     item.style.color = "red";
-    switch(item) {
-      case document.querySelector("#usf-comment"):
-        document.querySelector("#usf-comment-box").style.display = "block";
-        break;
-      case document.querySelector("#aurelius-comment"):
-        document.querySelector("#aurelius-comment-box").style.display = "block";
-        break;
-      case document.querySelector("#blackjack-comment"):
-        document.querySelector("#blackjack-comment-box").style.display = "block";
-        break;
-      case document.querySelector("#hbo-comment"):
-        document.querySelector("#hbo-comment-box").style.display = "block";
-        break;
-      case document.querySelector("#halo-comment"):
-        document.querySelector("#halo-comment-box").style.display = "block";
-        break;
-      case document.querySelector("#checkers-comment"):
-        document.querySelector("#checkers-comment-box").style.display = "block";
-        break;
-      case document.querySelector("#ufc-comment"):
-        document.querySelector("#ufc-comment-box").style.display = "block";
-        break;
-      case document.querySelector("#seneca-comment"):
-        document.querySelector("#seneca-comment-box").style.display = "block";
-        break;
-      case document.querySelector("#uf-comment"):
-        document.querySelector("#uf-comment-box").style.display = "block";
-        break;
-      case document.querySelector("#calculator-comment"):
-        document.querySelector("#calculator-comment-box").style.display = "block";
-        break;
-    }
+    item.parentNode.parentNode.childNodes[3].style.display = "block";
   });
 });
 
