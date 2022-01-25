@@ -61,6 +61,25 @@
       </div>
       <section id='trending'>
         <div class='card m-3'>
+          <h5 class='card-header'>Portfolio Projects <span class='badge bg-warning'>Ad</span></h5>
+          <div class='card-body'>
+            <p class='card-text'>Want to test your knowledge of web development? This short quiz is just for you.</p>
+            <a class='card-link' href='https://zacandcoder.github.io/web-dev-quiz/' target='_blank'>Take the quiz</a>
+          </div>
+          <div class='card-footer'>
+            <div class='btn-group' role='group' aria-label='Options to like or comment on the post'>
+              <i class="bi bi-suit-heart" role='button' aria-label='Like this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Like this post'></i>
+              <i id='quiz-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
+            </div>
+            January 25, 2022
+            <div id='quiz-comment-box' class='comment-box'>
+              <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
+              <br>
+              <button type='submit' class='btn-sm btn-success'>Submit</button>
+            </div>
+          </div>
+        </div>
+        <div class='card m-3'>
           <h5 class='card-header'>The Tellone Tribune <span class='badge bg-primary'>News</span></h5>
           <div class='card-body'>
             <p class='card-text'>According to the U.S. News and World Report, the University of South Florida is rising in rank quicker than any other university in the nation.</p>
@@ -72,7 +91,7 @@
               <i id='usf-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
             </div>
             September 13, 2021
-            <div id='usf-comment-box'>
+            <div id='usf-comment-box' class='comment-box'>
               <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
               <br>
               <button type='submit' class='btn-sm btn-success'>Submit</button>
@@ -90,7 +109,7 @@
               <i id='aurelius-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
             </div>
             2nd Century AD
-            <div id='aurelius-comment-box'>
+            <div id='aurelius-comment-box' class='comment-box'>
               <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
               <br>
               <button type='submit' class='btn-sm btn-success'>Submit</button>
@@ -109,7 +128,7 @@
               <i id='blackjack-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
             </div>
             October 28, 2021
-            <div id='blackjack-comment-box'>
+            <div id='blackjack-comment-box' class='comment-box'>
               <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
               <br>
               <button type='submit' class='btn-sm btn-success'>Submit</button>
@@ -128,7 +147,7 @@
               <i id='hbo-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
             </div>
             October 5, 2021
-            <div id='hbo-comment-box'>
+            <div id='hbo-comment-box' class='comment-box'>
               <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
               <br>
               <button type='submit' class='btn-sm btn-success'>Submit</button>
@@ -147,7 +166,7 @@
               <i id='halo-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
             </div>
             October 27, 2021
-            <div id='halo-comment-box'>
+            <div id='halo-comment-box' class='comment-box'>
               <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
               <br>
               <button type='submit' class='btn-sm btn-success'>Submit</button>
@@ -166,7 +185,7 @@
               <i id='checkers-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
             </div>
             October 28, 2021
-            <div id='checkers-comment-box'>
+            <div id='checkers-comment-box' class='comment-box'>
               <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
               <br>
               <button type='submit' class='btn-sm btn-success'>Submit</button>
@@ -185,7 +204,7 @@
               <i id='ufc-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
             </div>
             October 4, 2021
-            <div id='ufc-comment-box'>
+            <div id='ufc-comment-box' class='comment-box'>
               <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
               <br>
               <button type='submit' class='btn-sm btn-success'>Submit</button>
@@ -203,7 +222,7 @@
               <i id='seneca-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
             </div>
             1st Century AD
-            <div id='seneca-comment-box'>
+            <div id='seneca-comment-box' class='comment-box'>
               <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
               <br>
               <button type='submit' class='btn-sm btn-success'>Submit</button>
@@ -222,7 +241,7 @@
               <i id='uf-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
             </div>
             September 13, 2021
-            <div id='uf-comment-box'>
+            <div id='uf-comment-box' class='comment-box'>
               <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
               <br>
               <button type='submit' class='btn-sm btn-success'>Submit</button>
@@ -241,7 +260,7 @@
               <i id='calculator-comment' class="bi bi-chat-left" role='button' aria-label='Comment on this post' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Leave a comment'></i>
             </div>
             November 8, 2021
-            <div id='calculator-comment-box'>
+            <div id='calculator-comment-box' class='comment-box'>
               <textarea maxlength="100" placeholder='Leave a comment...'></textarea>
               <br>
               <button type='submit' class='btn-sm btn-success'>Submit</button>
@@ -280,7 +299,7 @@
           </h4>
           <div id='unread-message' class='accordion-collapse collapse' aria-labelledby='message-notification' data-bs-parent='#messages'>
             <div class='accordion-body'>
-              Hello! Thanks for checking out my fake social media app. This site serves as a portfolio of sorts. The "Trending" section contains posts that relate to my own interests. Any post with an "Ad" badge links to a project of mine. To learn more about my projects, you can check out my <a href='https://github.com/ZacAndCoder' target='_blank'>Github profile</a>.
+              Hello! Thanks for checking out my portfolio site. Each post that is titled "Portfolio Projects" includes a link to one of my projects. The "Trending" section also contains short posts that relate to my own interests. To learn more about my projects, you can check out my <a href='https://github.com/ZacAndCoder' target='_blank'>Github profile</a>.
             </div>
           </div>
         </div>
